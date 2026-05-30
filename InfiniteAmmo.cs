@@ -40,7 +40,8 @@ namespace InfiniteAmmo
 
                 if (vic.gameObject.GetComponent<InfAmmo>() != null) { continue; }
                 if (vic.UniqueName == "M2BRADLEY" || vic.UniqueName == "M2BRADLEY(ALT)" ||
-                    vic.UniqueName == "BMP2_SA" || vic.UniqueName == "BMP2")
+                    vic.UniqueName == "BMP2_SA" || vic.UniqueName == "BMP2" ||
+                    vic.UniqueName == "MARDERA1"|| vic.UniqueName == "MARDERA1PLUS" || vic.UniqueName == "MARDER1A2" || vic.UniqueName == "MARDERA1_NO_ATGM")
                 {                                       
                     GHPC.Weapons.AmmoRack rack = vic.transform.GetComponent<LoadoutManager>().RackLoadouts[0].Rack; 
                     rack.AddInvisibleClip(rack.ClipTypes[0]);
