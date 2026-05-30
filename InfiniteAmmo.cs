@@ -43,12 +43,13 @@ namespace InfiniteAmmo
                     vic.UniqueName == "BMP2_SA" || vic.UniqueName == "BMP2" ||
                     vic.UniqueName == "MARDERA1"|| vic.UniqueName == "MARDERA1PLUS" || vic.UniqueName == "MARDER1A2" || vic.UniqueName == "MARDERA1_NO_ATGM")
                 {                                       
-                    LoadoutManager.RackLoadout rackLoadout = vic.transform.GetComponent<LoadoutManager>().RackLoadouts[0];
-                    rackLoadout.AmmoCounts[0] = 2;
-                    rackLoadout.AmmoCounts[1] = 2;
+                    LoadoutManager.RackLoadout rackLoadout = vic.transform.GetComponent<LoadoutManager>().RackLoadouts[0];                    
                     GHPC.Weapons.AmmoRack rack = rackLoadout.Rack;
                     rack.AddInvisibleClip(rackLoadout.Rack.ClipTypes[0]);
                     rack.AddInvisibleClip(rackLoadout.Rack.ClipTypes[1]);
+                    rackLoadout.AmmoCounts[0] = 2;
+                    rackLoadout.AmmoCounts[1] = 2;
+                    rack.ClipCapacity = 4;
                     vic.gameObject.AddComponent<InfAmmo>();
                 }  
             }
